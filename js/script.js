@@ -40,20 +40,24 @@ function initMap() {
         center: CENTER,
         zoom: 14
     });
-    //Центрування карти на вибраній пам'ятці
-    // let CENTER_TOWER = { lat: 50.222183138354445, lng: 32.51466185286387 };
-    // let CENTER_MUSEUM = { lat: 50.24100163494029, lng: 32.51596348465856 };
-    // let CENTER_ISLAND = { lat: 50.239209937395046, lng: 32.53122619499988 }; 
+    // Центрування карти на вибраній пам'ятці
+    let CENTER_TOWER = { lat: 50.222183138354445, lng: 32.51466185286387 };
+    let CENTER_MUSEUM = { lat: 50.24100163494029, lng: 32.51596348465856 };
+    let CENTER_ISLAND = { lat: 50.239209937395046, lng: 32.53122619499988 }; 
 
-    // const TOWER = document.querySelectorAll('li')[0];
-    // const MUSEUM = document.querySelectorAll('li')[1];
-    // const ISLAND = document.querySelectorAll('li')[2];
-    // TOWER.addEventListener('click', function() {
-    //     MAP = new google.maps.Map(document.getElementById("map"), {
-    //         center: CENTER_TOWER,
-    //         zoom: 14
-    //     });
-    // })
+    let TOWER = document.querySelectorAll('li')[0];
+    let MUSEUM = document.querySelectorAll('li')[1];
+    let ISLAND = document.querySelectorAll('li')[2];
+    
+    TOWER.addEventListener('click', function() {
+        MAP.panTo(CENTER_TOWER)
+    })
+    MUSEUM.addEventListener('click', function() {
+        MAP.panTo(CENTER_MUSEUM)
+    })
+    ISLAND.addEventListener('click', function() {
+        MAP.panTo(CENTER_ISLAND)
+    })
 
     let marker;
     for (let i = 0; i <= PLACES.length; i++) {
